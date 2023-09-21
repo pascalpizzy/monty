@@ -11,21 +11,21 @@
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", m_push}, {"pall", m_pall}, {"pint", m_pint},
-				{"pop", m_pop},
-				{"swap", m_swap},
-				{"add", m_add},
-				{"nop", m_nop},
-				{"sub", m_sub},
-				{"div", m_div},
-				{"mul", m_mul},
-				{"mod", m_mod},
-				{"pchar", m_pchar},
-				{"pstr", m_pstr},
-				{"rotl", m_rotl},
-				{"rotr", m_rotr},
-				{"queue", m_queue},
-				{"stack", m_stack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -53,12 +53,12 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 }
 
 /**
- * add_node - add node to the head stack
+ * addnode - add node to the head stack
  * @head: thi is the head of the stack
  * @n: new_value
  * Return: no return
 */
-void add_node(stack_t **head, int n)
+void addnode(stack_t **head, int n)
 {
 
 	stack_t *new_node, *aux;
