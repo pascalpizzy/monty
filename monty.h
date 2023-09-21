@@ -1,3 +1,41 @@
+#ifndef _MONTY_H_
+#define _MONTY_H_
+
+#define  _GNU_SOURCE
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <ctype.h>
+
+/**
+ * struct stack_s - representation of a stack in a doubly linked list (or queue)
+ * @n: integer
+ * @prev: pointer to a previous element of the stack (or queue)
+ * @next: this points to the next element of the stack (or queue)
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
+ */
+
+typedef struct stack_s
+{
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
+} stack_t;
+
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: monty file pointer
+ * @content: content of line
+ * @lifi: change in flag stack <-> queue
+ * Description: carries values through the program
+ */
+
 typedef struct bus_s
 {
 	char *arg;
@@ -9,9 +47,9 @@ extern bus_t bus;
 
 /**
  * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- * Description: opcode and its function
+ * @opcode: opcode
+ * @f: this is for a function to handle the opcode
+ * Description: this is for opcode and its function
  * for stack, queues, LIFO, FIFO
  */
 
