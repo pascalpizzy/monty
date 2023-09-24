@@ -1,11 +1,10 @@
 #include "monty.h"
-
 /**
-* execute - this executes the opcode
-* @stack: head linked list 
-* @counter: counts lines
-* @file: a pointer to a monty file
-* @content: line content
+* execute - this will execute the opcode
+* @stack: linked list of head in stack
+* @counter: counts number of lines
+* @file: this is a pointer to a monty file
+* @content: content of a line
 * Return: no return
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
@@ -50,45 +49,4 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
-}
-
-/**
- * addnode - add node to the head stack
- * @head: thi is the head of the stack
- * @n: new_value
- * Return: no return
-*/
-void addnode(stack_t **head, int n)
-{
-
-	stack_t *new_node, *aux;
-
-	aux = *head;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{ printf("Error\n");
-		exit(0); }
-	if (aux)
-		aux->prev = new_node;
-	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
-}
-
-/**
-* stack_free - for freeing a doubly linked list
-* @head: this is head of the stack
-*/
-void stack_free(stack_t *head)
-{
-	stack_t *aux;
-
-	aux = head;
-	while (head)
-	{
-		aux = head->next;
-		free(head);
-		head = aux;
-	}
 }

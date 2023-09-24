@@ -6,7 +6,7 @@
  * @counter: counts lines
  * Return: no return
 */
-void m_push(stack_t **head, unsigned int counter)
+void f_push(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
